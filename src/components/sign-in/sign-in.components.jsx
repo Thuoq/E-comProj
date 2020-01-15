@@ -34,7 +34,7 @@ import './sign-in.styles.scss'
 				<span>Sign in with your email and password</span>
 				<br></br>
 				<form onSubmit = {this.handleSubmit}>
-					<label >Email</label>
+					
 					<FormInput 
 						name = 'email' 
 						type ='email' 
@@ -42,7 +42,7 @@ import './sign-in.styles.scss'
 						value={this.state.email} 
 						handleChange = {this.handleChange}
 						required />
-					<label>Password</label>
+					
 					<FormInput 
 						name = 'password' 
 						type ='password' 
