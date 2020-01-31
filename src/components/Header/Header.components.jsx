@@ -1,14 +1,15 @@
 import React from 'react';
 import './header.styles.scss';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import {auth} from '../../firebase/firebase.utils'
+import { auth } from '../../firebase/firebase.utils';
 
 
 const Header = ({ currentUser }) => {
-		//console.log(currentUser);  
-	return 	 (
-			<div className = 'header'>
+    //console.log(currentUser);  
+    return (
+        <div className = 'header'>
 				<Link to = '/' className = 'logo-container'>
 					<Logo className='logo' />
 				</Link>
@@ -25,7 +26,10 @@ const Header = ({ currentUser }) => {
 					}
 				</div>
 			</div>
-		)		
+    )
 
 }
-export default Header;
+const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser,
+})
+export default connect(mapStateToProps)(Header) /*HOC new*/ ;
