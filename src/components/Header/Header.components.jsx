@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.styles.scss';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; /*connect */
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.utils';
@@ -37,7 +37,7 @@ const Header = ({ currentUser,hidden}) => {
     )
 
 }
-
+ /* connect state of global redux to props*/
 const mapStateToProps = ({user: {currentUser}, cart:{hidden}}) => ({
     currentUser,
     hidden

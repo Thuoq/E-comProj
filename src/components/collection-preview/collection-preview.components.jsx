@@ -8,8 +8,8 @@ const Collection = ({title, items}) => (
 			{
 				items
 				.filter((item, idx) => idx<4)
-				.map(({id, ...othersItemsProps}) =>(
-					<CollectionItem key = {id} {...othersItemsProps} />
+				.map((item) =>(
+					<CollectionItem key = {item.id} item= {item} />
 				))
 
 				
