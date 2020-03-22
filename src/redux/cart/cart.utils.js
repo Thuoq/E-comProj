@@ -16,3 +16,10 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 	}
 	return [...cartItems, {...cartItemToAdd,quantity: 1}]
 }
+export const decraseCartItem = (cartItems,cartItemToAdd) => {
+	const exitsItem =  cartItems.find(el => el.id === cartItemToAdd.id);
+	if(exitsItem.quantity === 1 ) {
+		return cartItems.filter(el => el.id !== cartItemToAdd.id )
+	}	
+	return cartItems.map(el => (el.id === cartItemToAdd.id) ? {...el,quantity: el.quantity - 1 } :el )
+}
